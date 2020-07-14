@@ -1,37 +1,16 @@
-## Welcome to GitHub Pages
+## 前端压缩图片的优势
+1. 由于上传图片尺寸比较小，因此上传速度会比较快，交互会更加流畅，同时大大降低了网络异常导致上传失败风险。
+2. 图片没有大小限制，因为不用传输到服务器，所以理论上可以上传任意大小的图片进行压缩
 
-You can use the [editor on GitHub](https://github.com/1314mxc/compress/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## 暂时来说，前端压缩图片的缺点
+1. 对于一些字体较小的图片来说，如果没有把控好压缩的“度”，整个图片会非常模糊
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## 关于此工具
+**体验地址：** [http://htmlpreview.github.io/?https://github.com/1314mxc/compress/blob/master/compress.html](http://htmlpreview.github.io/?https://github.com/1314mxc/compress/blob/master/compress.html)
 
-### Markdown
+暂时只能支持png等静态图片上传，不支持更改格式，暂不支持GIF动图压缩；
+*此版本建议不要用来压缩含有大量小字体图片！！！*
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/1314mxc/compress/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## 此版本较上版本优化
+此版本为1.1.0，新增控制按钮，可以自行决定是否压缩完自动下载；新增预览，在选择图片后在选择的地方会有2s的图片显示时间（下个版本预计会有专门预览框/按钮）
