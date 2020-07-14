@@ -2,13 +2,13 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>小梦速压-国内唯N纯前端图片压缩上传专业网站</title>
+		<title>小梦速压-国内唯N纯前端图片压缩下载专业网站</title>
 		<link rel="stylesheet" href="./css/index.css" />
 	</head>
 	<body>
 		<div id="files">
 			<p class="hid">未选择任何文件</p>
-			<input id="file" type="file" style="opacity: 0;">
+			<input id="file" type="file" accept="image/*" style="opacity: 0;">
 		</div>
 		<input type="checkbox" title="是否自动下载" class="isY" />
 	
@@ -51,10 +51,10 @@
 			    var originWidth = this.width;
 			    var originHeight = this.height;
 			    // 最大尺寸限制
-			    var maxWidth = 400, maxHeight = 400;
+			    var maxWidth = 500, maxHeight = 500;
 			    // 目标尺寸
 			    var targetWidth = originWidth, targetHeight = originHeight;
-			    // 图片尺寸超过400x400的限制
+			    // 图片尺寸超过500x500的限制
 			    if (originWidth > maxWidth || originHeight > maxHeight) {
 			        if (originWidth / originHeight > maxWidth / maxHeight) {
 			            // 更宽，按照宽度限定尺寸
@@ -88,9 +88,12 @@
 			    //     xhr.send(blob);    
 			    // }, file.type || 'image/png');
 				
+				var li=document.createElement('div')
+				li.setAttribute('class','imgsho')
 				var immg=document.createElement('img')
 				immg.setAttribute('src',canvas.toDataURL("image/png"))
-				bottomview.appendChild(immg)
+				li.appendChild(immg)
+				bottomview.appendChild(li)
 				
 				if(isY){
 					let a = document.createElement("a"); // 生成一个a元素
@@ -112,7 +115,7 @@
 				setTimeout(()=>{
 					files.removeChild(iim)
 					hide.innerHTML="未选择压缩图片"
-				},2000)
+				},1500)
 			    img.src = e.target.result;
 			};
 			eleFile.addEventListener('change', function (event) {

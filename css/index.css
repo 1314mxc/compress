@@ -21,6 +21,12 @@ html{
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-100%);
+	/* 元素遮罩层不遮挡下方元素的代码 */
+	-webkit-pointer-events: none;
+	-moz-pointer-events: none;
+	-ms-pointer-events: none;
+	-o-pointer-events: none;
+	pointer-events: none;
 }
 #files #file{
 	width: 100%;
@@ -39,17 +45,28 @@ html{
 	margin-top: 2.5rem;
 	text-align: center;
 }
+#bottomview .imgsho{
+	width: 100%;
+	height: 90px;
+	overflow: hidden;
+	margin-top: 0.75rem;
+}
+.imgsho img{
+	height: 100%;
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
 .isY{
 	position: absolute;
-	top: 22%;
-	right: 24%;
-	 box-sizing: content-box;
-	 width: 2.6rem;
-	 height: 1.4rem;
-	 border: 1px solid #ccc;
-	 outline: 0;
-	 border-radius: .75rem;
-	 background-color: rgba(0, 0, 0, 0.1);
+	top: 8.25rem;
+	right: 23vw;
+	box-sizing: content-box;
+	width: 2.6rem;
+	height: 1.4rem;
+	border: 1px solid #ccc;
+	outline: 0;
+	border-radius: .75rem;
+	background-color: rgba(0, 0, 0, 0.1);
 	transition: background-color .3s, border .3s;
 	 /* 去掉webkit内核里默认的样式 */
 	-webkit-appearance: none;
