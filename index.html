@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>小梦在线图片处理工具-性感小梦，在线处理</title>
+		<link 
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+		 />
+		 <style>
+			 html{
+				 background: rgba(0,0,0,.4);
+			 }
+			 a{
+				 text-decoration: none;
+				 outline: none;
+				 color: #000000;
+			 }
+			 .cent{
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				margin-top: 50vh;
+				transform: translateY(-50%);
+				
+			 }
+			 .cent .left{
+				 position: relative;
+				 width: 30%;
+				 height: 15rem;
+				 border: 0.0625rem solid rgba(0,0,0,.3);
+				 border-radius: 0.4375rem;
+				 text-align: center;
+				 animation: zoomInLeft;
+				 animation-duration: 1.3s;
+				 display: flex;
+				 flex-direction: column;
+				 justify-content: center;
+				 transition: all .6s;
+				 cursor: pointer;
+			 }
+			 .left a{
+				 position: absolute;
+				 top: 0;
+				 width: 100%;
+				 height: 100%;
+				 z-index: 2;
+			 }
+			 .left:hover{
+				 box-shadow: 0.1875rem 0.0625rem rgba(0,0,0,.4);
+				 transform: translateY(-0.625rem);
+			 }
+			 .left:hover .left-bot{
+				 animation: heartBeat;
+				 font-weight: 400;
+				 animation-duration: 1.7s;
+			 }
+			 .cent .right{
+				position: relative;
+			 	width: 30%;
+			 	height: 15rem;
+			 	border: 0.0625rem solid rgba(0,0,0,.3);
+			 	border-radius: 0.4375rem;
+				text-align: center;
+				line-height: 15rem;
+			 	animation: zoomInRight;
+			 	animation-duration: 1.4s;
+				transition: all .6s;
+				cursor: pointer;
+			 }
+			 .right a{
+				 position: absolute;
+				 top: 0;
+				 left: 0;
+				 width: 100%;
+				 height: 100%;
+				 z-index: 100;
+			 }
+			 .right:hover{
+				 box-shadow: 0.1875rem 0.0625rem rgba(0,0,0,.4);
+				 transform: translateY(-0.625rem);
+			 }
+			 .right:hover p{
+				 animation: swing;
+				 animation-duration: 1.6s;
+			 }
+		 </style>
+	</head>
+	<body>
+		<div class="cent">
+			<div class="left">
+				<p class="left-top">图片压缩</p>
+				<p class="left-bot">国内唯N纯前端图片压缩工具-更小更轻便!</p>
+				<a href="compress.html"></a>
+			</div>
+			<div class="right">
+				<p>图片合成</p>
+				<a href="combine.html"></a>
+			</div>
+		</div>
+	</body>
+	<script>
+		document.title="loading..."
+		setTimeout(()=>{
+			document.title="小梦在线图片处理工具-性感小梦，在线处理"
+		},1000)
+	</script>
+</html>
