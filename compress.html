@@ -99,6 +99,7 @@
 					let a = document.createElement("a"); // 生成一个a元素
 					let event = new MouseEvent("click"); // 创建一个单击事件
 					a.download = name || "photo"; // 设置图片名称
+					a.style.display='none';
 					a.href = canvas.toDataURL("image/png"); // 将生成的URL设置为a.href属性
 					a.dispatchEvent(event); // 触发a的单击事件
 				}
@@ -119,14 +120,26 @@
 			    img.src = e.target.result;
 			};
 			eleFile.addEventListener('change', function (event) {
+			 // console.log(event)
 			    file = event.target.files[0];
-				name=event.target.files[0].name;
+				name=event.target.files[0].name || '';
 			    // 选择的文件是图片
 			    if (file.type.indexOf("image") == 0) {
 					// 文件base64化，以便获知图片原始尺寸
 			        reader.readAsDataURL(file);    
 			    }
 			});
+			eleFile.addEventListener('dragover',function(event){
+				event.preventDefault()
+			})
+			eleFile.addEventListener('drop',function(event){
+				event.preventDefault()
+				console.log(event)
+				file=event.dataTransfer.files[0]
+				if(file.type.indexOf("image")==0){
+					reader.readAsDataURL(file)
+				}
+			})
 		</script>
 		<!-- 想要用es6重构，很遗憾，失败了。wtf！！！ -->
 		<!-- <script src="./js/index.js"></script>
