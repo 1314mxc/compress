@@ -73,6 +73,11 @@ html{
 	 /* 去掉webkit内核里默认的点击效果 */
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+@media screen and (min-width:996px){
+	.isY{
+		top: 11.25rem;
+	}
+}
 .isY:checked{
 	border-color: #07C160;
 	background-color: #07C160;
