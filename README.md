@@ -24,6 +24,12 @@
 - 1.1.0，新增控制按钮，可以自行决定是否压缩完自动下载；新增预览，在选择图片后在选择的地方会有2s的图片显示时间（下个版本预计会有专门预览框/按钮）
 
 
+## 联系作者
+| ➕微信 | ➕QQ |
+|--|--|
+| [https://img-blog.csdnimg.cn/20200716101914321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjI0ODc4,size_16,color_FFFFFF,t_70](https://img-blog.csdnimg.cn/20200716101914321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjI0ODc4,size_16,color_FFFFFF,t_70) | [https://img-blog.csdnimg.cn/20200716101900621.png](https://img-blog.csdnimg.cn/20200716101900621.png) |
+
+
 ## 实现
 本demo的核心就是canvas的绘图方法drawImage()。
 其使用参数如下：
