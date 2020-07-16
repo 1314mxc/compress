@@ -27,7 +27,7 @@
 ## 联系作者
 | ➕微信 | ➕QQ |
 |--|--|
-| ![微信](https://img-blog.csdnimg.cn/20200716102902499.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjI0ODc4,size_16,color_FFFFFF,t_70) | ![QQ](https://img-blog.csdnimg.cn/20200716102919163.png) |
+| ![yunxiaomengnb](https://img-blog.csdnimg.cn/20200716102902499.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjI0ODc4,size_16,color_FFFFFF,t_70) | ![1562494673](https://img-blog.csdnimg.cn/20200716102919163.png) |
 
 
 ## 实现
@@ -43,4 +43,3 @@ context.drawImage(img, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
 
 完整源码见上面compress.html文件。
 
-但是以后的一个版本一定会有一个“记忆用户压缩列表”的功能，这是为了防止有些人总是用完就删，结果下次再用就找不到了 —— 这当然要用到后端，但是【前端压缩】的核心基础不会变（除非哪一天有更好的方法了）
