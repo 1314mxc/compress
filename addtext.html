@@ -2,7 +2,11 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>小梦速压-国内唯N纯前端图片压缩下载专业网站</title>
+		<title>小梦图片处理-为你的图片添加上喜欢的文字吧！</title>
+		<link
+		    rel="stylesheet"
+		    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+		/>
 		<style>
 			html{
 				width: 100%;
@@ -53,17 +57,12 @@
 				margin-top: 2.5rem;
 				text-align: center;
 			}
-			#bottomview .imgsho{
-				width: 100%;
-				height: 110px;
-				overflow: hidden;
-				margin-top: 0.75rem;
-			}
-			.imgsho img{
-				height: 100%;
+			#bottomview .filebox{
 				margin-left: 50%;
 				transform: translateX(-50%);
+				margin-top: 0.325rem;
 			}
+			
 			.isY{
 				position: absolute;
 				top: 8.25rem;
@@ -83,7 +82,17 @@
 			}
 			@media screen and (min-width:996px){
 				.isY{
-					top: 11.25rem;
+					top: 9.75rem;
+				}
+			}
+			@media screen and (max-width:905px) and (min-width:802px){
+				.isY{
+					top: 7.25rem;
+				}
+			}
+			@media screen and (max-width:800px){
+				.isY{
+					top: 5.75rem;
 				}
 			}
 			.isY:checked{
@@ -105,6 +114,20 @@
 			.isY:checked::after{
 				left: 1.2rem;
 			}
+			.input{
+				width: 100%;
+				margin-top: 1.4375rem;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				text-align: center;
+			}
+			.fix{
+				position: fixed;
+				bottom: 20%;
+				right: 6%;
+				z-index: 200;
+			}
 		</style>
 	</head>
 	<body>
@@ -113,27 +136,19 @@
 			<input id="file" type="file" accept="image/*" style="opacity: 0;">
 		</div>
 		<input type="checkbox" title="是否自动下载" class="isY" />
-	
+		<div class="input">
+			<input id="mxcText" type="text" maxlength="15" placeholder="请输入显示文字" />
+			<input id="mxcTexts" type="text" maxlength="2" placeholder="请输入字体大小(数字)" />
+			<input type="button" value="添加字体" id="onInput" />
+		</div>
+			
 		<div id="bottomview">
 			压缩列表：
+			<div class="filebox"></div>
 		</div>
 		
-		<script src="./js/compress.js"></script>
-		<!-- 想要用es6重构，很遗憾，失败了。wtf！！！啊啊啊啊啊啊啊啊啊为什么总是new报错啊 -->
-		<!-- <script src="./js/index.js"></script>
-		<script>
-			var hide=document.querySelector('.hid')
-			var bottomview=document.querySelector('#bottomview')
-			var files=document.querySelector('#files')
-			var eleFile = document.querySelector('#file');
-			var p=new Compress({
-				hide,
-				bottomview,
-				files,
-				eleFile,
-				isYes:true
-			})
-		</script> -->
+		<div class="fix">要压缩吗？</div>
+		
+		<script src="./js/addfile.js"></script>
 	</body>
-	
 </html>

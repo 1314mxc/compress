@@ -3,7 +3,167 @@
 	<head>
 		<meta charset="utf-8">
 		<title>制作你想要的合成图！</title>
-		<link rel="prefetch stylesheet" href="./css/index2.css" />
+		<style>
+			html{
+				width: 100%;
+				height: 100vh;
+				background: rgba(0,0,0,.2);
+			}
+			.show{
+				display: flex;
+				width: 100%;
+				flex-direction: row;
+				justify-content: space-around;
+			}
+			.show #fileso,#filest{
+				position: relative;
+				width: 40%;
+				height: 0;
+				padding-bottom: 16%;
+				border-radius: .75rem;
+				border: 1px solid rgba(0,0,0,.3);
+				text-align: center;
+				overflow: hidden;
+			}
+			#fileso .hid{
+				position: absolute;
+				opacity: .4;
+				transition: opacity .4s;
+				z-index: 2;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-100%);
+				/* 元素遮罩层不遮挡下方元素的代码 */
+				-webkit-pointer-events: none;
+				-moz-pointer-events: none;
+				-ms-pointer-events: none;
+				-o-pointer-events: none;
+				pointer-events: none;
+			}
+			#fileso #fileo{
+				width: 100%;
+				height: 0;
+				padding-bottom: 40%;
+				outline: none;
+				box-sizing: border-box;
+				background: white;
+				/* 去掉webkit内核里默认的样式 */
+				-webkit-appearance: none;
+				/* 去掉webkit内核里默认的点击效果 */
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			#filest .hid{
+				position: absolute;
+				opacity: .4;
+				transition: opacity .4s;
+				z-index: 2;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-100%);
+				/* 元素遮罩层不遮挡下方元素的代码 */
+				-webkit-pointer-events: none;
+				-moz-pointer-events: none;
+				-ms-pointer-events: none;
+				-o-pointer-events: none;
+				pointer-events: none;
+			}
+			#filest #filet{
+				width: 100%;
+				height: 0;
+				padding-bottom: 40%;
+				outline: none;
+				box-sizing: border-box;
+				background: white;
+				/* 去掉webkit内核里默认的样式 */
+				-webkit-appearance: none;
+				/* 去掉webkit内核里默认的点击效果 */
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			#filess{
+				position: relative;
+				width: 40%;
+				height: 0;
+				padding-bottom: 16%;
+				border-radius: .75rem;
+				margin-left: 50%;
+				transform: translateX(-50%);
+				border: 1px solid rgba(0,0,0,.3);
+				text-align: center;
+				overflow: hidden;
+				margin-top: 7rem;
+			}
+			#filess .hids{
+				position: absolute;
+				opacity: .4;
+				transition: opacity .4s;
+				z-index: 2;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				/* 元素遮罩层不遮挡下方元素的代码 */
+				-webkit-pointer-events: none;
+				-moz-pointer-events: none;
+				-ms-pointer-events: none;
+				-o-pointer-events: none;
+				pointer-events: none;
+			}
+			#bto{
+				text-align: center;
+				padding-top: 1.75rem;
+				cursor: pointer;
+			}
+			.isY{
+				position: absolute;
+				top: 27.75rem;
+				right: 23vw;
+				box-sizing: content-box;
+				width: 2.6rem;
+				height: 1.4rem;
+				border: 1px solid #ccc;
+				outline: 0;
+				border-radius: .75rem;
+				background-color: rgba(0, 0, 0, 0.1);
+				transition: background-color .3s, border .3s;
+				 /* 去掉webkit内核里默认的样式 */
+				-webkit-appearance: none;
+				 /* 去掉webkit内核里默认的点击效果 */
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			}
+			@media screen and (min-width:996px){
+				.isY{
+					top: 30.75rem;
+				}
+			}
+			@media screen and (max-width:900px) and (min-width:750px){
+				.isY{
+					top: 25.75rem;
+				}
+			}
+			@media screen and (max-width:800px){
+				.isY{
+					top: 23.45rem;
+				}
+			}
+			.isY:checked{
+				border-color: #07C160;
+				background-color: #07C160;
+			}
+			.isY::after{
+				content: " ";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 1.4rem;
+				height: 1.4rem;
+				border-radius: .7rem;
+				background-color: #FFFFFF;
+				box-shadow: 0 0 2px #999;
+				transition: left .3s;
+			}
+			.isY:checked::after{
+				left: 1.2rem;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="show">
@@ -21,130 +181,8 @@
 			<p class="hids">此处是合成图,你完全可以将此处图片CV到“图片压缩”那里！</p>
 		</div>
 		<input type="checkbox" title="是否自动下载" class="isY" />
+		
+		<script src="./js/combine.js"></script>
 	</body>
-	<script>
-		var hide=document.querySelector('#fileso .hid')
-		fileso.onmouseenter=function(){
-			hide.style.opacity=1
-		}
-		fileso.onmouseleave=function(){
-			hide.style.opacity=0.4
-		}
-		var hide2=document.querySelector('#filest .hid')
-		filest.onmouseenter=function(){
-			hide2.style.opacity=1
-		}
-		filest.onmouseleave=function(){
-			hide2.style.opacity=0.4
-		}
-		var fimg1=new Image(),fimg2=new Image();
-		var cimg=null,cid=0,chd=0,vimg=null,vid=0,vhd=0;
-		var isY=false
-		var aut=document.querySelector('.isY')
-		aut.onclick=function(e){
-			if(this.checked){
-				isY=true
-			}else{
-				isY=false
-			}
-		}
-		fileo.addEventListener("change",function(e){
-			let fileReader=new FileReader(),
-				fileType=e.target.files[0].type;
-			let file = e.target.files[0];
-			fileReader.onload=function(e){
-				let img=document.createElement('img')
-				img.setAttribute('src',e.target.result)
-				img.setAttribute('id','iim')
-				img.style.cssText="position: absolute;top: 50%;left: 50%;z-index: 1000;transform: translate(-50%,-50%);"
-				hide.innerHTML=''
-				fileso.appendChild(img)
-				fimg1.src=e.target.result
-				cimg=img
-			}
-			// 选择的文件是图片
-			if (fileType.indexOf("image") == 0) {
-				// 文件base64化，以便获知图片原始尺寸
-			    fileReader.readAsDataURL(file);    
-			}
-		})
-		filet.addEventListener("change",function(e){
-			let fileReader=new FileReader(),
-				fileType=e.target.files[0].type;
-			let file = e.target.files[0];
-			fileReader.onload=function(e){
-				let img=document.createElement('img')
-				img.setAttribute('src',e.target.result)
-				img.setAttribute('id','iims')
-				img.style.cssText="position: absolute;top: 50%;left: 50%;z-index: 1000;transform: translate(-50%,-50%);"
-				hide2.innerHTML=''
-				filest.appendChild(img)
-				fimg2.src=e.target.result
-				vimg=img
-			}
-			// 选择的文件是图片
-			if (fileType.indexOf("image") == 0) {
-				// 文件base64化，以便获知图片原始尺寸
-			    fileReader.readAsDataURL(file);    
-			}
-		})
-		
-		fimg1.onload=function(){
-			// console.log(cimg)
-			cid=document.querySelector('img[id="iim"]').offsetWidth
-			chd=document.querySelector('img[id="iim"]').offsetHeight
-		}
-		
-		var canvass=document.createElement('canvas');
-		var contextt=canvass.getContext('2d');
-		fimg2.onload=function(){
-			vid=document.querySelector('img[id="iims"]').offsetWidth
-			vhd=document.querySelector('img[id="iims"]').offsetHeight
-			canvass.width = vid;
-			canvass.height = vhd;
-			contextt.drawImage(fimg2, 0, 0, vid, vhd);
-			let imageData = contextt.getImageData(0, 0, vid, vhd)
-			    , data = imageData.data
-			  for(let i = 0; i < data.length; i+=4) {
-			    data[i+3] = 80
-			  }
-			  
-			contextt.putImageData(imageData, 0, 0)
-			fimg2.src=canvass.toDataURL("image/png")
-		}
-		
-		bto.addEventListener('click', function(){
-			var canvas = document.createElement('canvas');
-			var context = canvas.getContext('2d');
-			cid=(cid==0)?500:cid
-			chd=(chd==0)?480:chd
-			canvas.width = cid;
-			canvas.height = chd;
-			
-			// context.drawImage(fimg1, 0, 0, cid, chd);
-			
-			
-			
-			// 绘制
-			context.drawImage(fimg1, 0, 0, cid, chd);
-			// 再次绘制
-			context.drawImage(fimg2, 0, 0, cid, chd);
-			// 回调
-			// console.log(canvas)
-			var immg=document.createElement('img')
-			immg.setAttribute('src',canvas.toDataURL("image/png"))
-			filess.appendChild(immg)
-			var dil=document.querySelector('#filess .hids')
-			dil.innerHTML=''
-			if(isY){
-				let a = document.createElement("a"); // 生成一个a元素
-				let event = new MouseEvent("click"); // 创建一个单击事件
-				a.download = name || "photo"; // 设置图片名称
-				a.style.display='none';
-				a.href = canvas.toDataURL("image/png"); // 将生成的URL设置为a.href属性
-				a.dispatchEvent(event); // 触发a的单击事件
-			}
-			
-		});
-	</script>
+	
 </html>

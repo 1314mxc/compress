@@ -23,13 +23,14 @@
 				display: flex;
 				flex-direction: row;
 				justify-content: space-around;
+				flex-wrap: wrap;
 				margin-top: 50vh;
 				transform: translateY(-50%);
 				
 			 }
 			 .cent .left{
 				 position: relative;
-				 width: 30%;
+				 width: 36%;
 				 height: 15rem;
 				 border: 0.0625rem solid rgba(0,0,0,.3);
 				 border-radius: 0.4375rem;
@@ -50,7 +51,7 @@
 				 z-index: 2;
 			 }
 			 .left:hover{
-				 box-shadow: 0.1875rem 0.0625rem rgba(0,0,0,.4);
+				 box-shadow: 0.125rem 0.125rem 0.25rem rgba(0,0,0,.3);
 				 transform: translateY(-0.625rem);
 			 }
 			 .left:hover .left-bot{
@@ -60,7 +61,7 @@
 			 }
 			 .cent .right{
 				position: relative;
-			 	width: 30%;
+			 	width: 36%;
 			 	height: 15rem;
 			 	border: 0.0625rem solid rgba(0,0,0,.3);
 			 	border-radius: 0.4375rem;
@@ -80,12 +81,15 @@
 				 z-index: 100;
 			 }
 			 .right:hover{
-				 box-shadow: 0.1875rem 0.0625rem rgba(0,0,0,.4);
+				 box-shadow: 0.125rem 0.125rem 0.25rem rgba(0,0,0,.3);
 				 transform: translateY(-0.625rem);
 			 }
 			 .right:hover p{
 				 animation: swing;
 				 animation-duration: 1.6s;
+			 }
+			 .bot-lef{
+				 margin-top: 0.75rem;
 			 }
 		 </style>
 	</head>
@@ -99,6 +103,11 @@
 			<div class="right">
 				<p>图片合成</p>
 				<a href="combine.html"></a>
+			</div>
+			<div class="left bot-lef">
+				<p class="left-top">图片文字添加</p>
+				<p class="left-bot">DIY表情包制作的利器-你值得拥有!</p>
+				<a href="addtext.html"></a>
 			</div>
 		</div>
 	</body>
