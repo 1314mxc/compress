@@ -40,6 +40,7 @@
 | ![yunxiaomengnb](https://img-blog.csdnimg.cn/20200716102902499.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjI0ODc4,size_16,color_FFFFFF,t_70) | ![1562494673](https://img-blog.csdnimg.cn/20200716102919163.png) |
 
 
+
 ## 实现
 本demo的核心就是canvas的绘图方法drawImage()。
 其使用参数如下：
