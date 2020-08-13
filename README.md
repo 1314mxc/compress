@@ -10,11 +10,13 @@
 ## 关于此工具
 **体验地址：** [http://htmlpreview.github.io/?https://github.com/1314mxc/compress/blob/master/index.html](http://htmlpreview.github.io/?https://github.com/1314mxc/compress/blob/master/index.html)
 
-暂时只能支持png等静态图片上传，不支持更改格式，暂不支持GIF动图压缩；
+暂时只能支持png等静态图片上传，不支持更改格式，暂不支持GIF动图处理，暂不支持视频处理；
 *此版本建议不要用来压缩含有大量小字体图片！！！*
 
 
 ## 此版本较上版本优化
+- 此版本为1.4.0正式版，优化了页面结构。正式预告：canvas图片处理插件将和下一版本一起发布！
+- |
 - 此版本为1.4.0beta，跳过1.3.1正式版，新增“图片文字处理”功能（可用于表情包制作），并增强页面之间联动性；修复上一版本资源显示问题；增强用户操作性，给您更好的体验
 - |
 - 1.3.1beta，为正式版做预告，并部分修复了前几个版本中资源加载速度与显示格式的问题
