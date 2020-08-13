@@ -71,7 +71,7 @@ img.onload = function () {
 		            r += data[((originWidth * row) + col)];
 		            g += data[((originWidth * row) + col) + 1];
 		            b += data[((originWidth * row) + col) + 2];
-		        }else{          originWidth
+		        }else{
 		            r += data[((originWidth * row) + col) * 4];
 		            g += data[((originWidth * row) + col) * 4 + 1];
 		            b += data[((originWidth * row) + col) * 4 + 2];

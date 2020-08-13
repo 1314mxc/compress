@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>小梦在线图片处理工具-性感小梦，在线处理</title>
+		<link rel="icon" href="img/mxc_16x16.png" type="image/png" sizes="16x16">
 		<link 
 			rel="subresource stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
@@ -10,7 +11,11 @@
 		 <style>
 			 html{
 				 width: 100%;
-				 height: 100vh;
+				 min-height: 100%;
+			 }
+			 body{
+				 margin: 0;
+				 padding: 0;
 				 background: linear-gradient(to bottom right, rgba(255,255,255,.6) , rgba(0,0,0,.4));
 			 }
 			 a{
@@ -18,15 +23,19 @@
 				 outline: none;
 				 color: #000000;
 			 }
+			 .index{
+				 width: 100%;
+				 min-height: 101vh;
+				 box-sizing: border-box;
+				 padding-top: 9%;
+			 }
 			 .cent{
 				width: 100%;
+				height: 100%;
 				display: flex;
 				flex-direction: row;
 				justify-content: space-around;
 				flex-wrap: wrap;
-				margin-top: 50vh;
-				transform: translateY(-50%);
-				
 			 }
 			 .cent .left{
 				 position: relative;
@@ -42,6 +51,7 @@
 				 justify-content: center;
 				 transition: all .6s;
 				 cursor: pointer;
+				 overflow: hidden;
 			 }
 			 .left a{
 				 position: absolute;
@@ -71,6 +81,7 @@
 			 	animation-duration: 1.4s;
 				transition: all .6s;
 				cursor: pointer;
+				overflow: hidden;
 			 }
 			 .right a{
 				 position: absolute;
@@ -91,23 +102,38 @@
 			 .bot-lef{
 				 margin-top: 0.75rem;
 			 }
+			 @media screen and (max-width:697px) {
+				 .index{
+					 padding-top: 5%;
+				 }
+			 	.cent .left{
+					width: 50%;
+					margin-top: 0.75rem;
+				}
+				.cent .right{
+					width: 50%;
+					margin-top: 0.9125rem;
+				}
+			 }
 		 </style>
 	</head>
 	<body>
-		<div class="cent">
-			<div class="left">
-				<p class="left-top">图片压缩</p>
-				<p class="left-bot">国内唯N纯前端图片压缩工具-更小更轻便!</p>
-				<a href="compress.html"></a>
-			</div>
-			<div class="right">
-				<p>图片合成</p>
-				<a href="combine.html"></a>
-			</div>
-			<div class="left bot-lef">
-				<p class="left-top">图片文字添加</p>
-				<p class="left-bot">DIY表情包制作的利器-你值得拥有!</p>
-				<a href="addtext.html"></a>
+		<div class="index">
+			<div class="cent">
+				<div class="left">
+					<p class="left-top">图片压缩</p>
+					<p class="left-bot">国内唯N纯前端图片压缩工具-更小更轻便!</p>
+					<a href="compress.html"></a>
+				</div>
+				<div class="right">
+					<p>图片合成</p>
+					<a href="combine.html"></a>
+				</div>
+				<div class="left bot-lef">
+					<p class="left-top">图片文字添加</p>
+					<p class="left-bot">DIY表情包制作的利器-你值得拥有!</p>
+					<a href="addtext.html"></a>
+				</div>
 			</div>
 		</div>
 	</body>
@@ -116,5 +142,10 @@
 		setTimeout(()=>{
 			document.title="小梦在线图片处理工具-性感小梦，在线处理"
 		},1000)
+		if(navigator.userAgent.includes("iPhone") || navigator.userAgent.includes('Android')){
+			document.querySelectorAll('.left')[0].style.cssText+="width:50%;margin-top:4.75rem"
+			document.querySelectorAll('.left')[1].style.cssText+="width:50%;margin-top:4.75rem"
+			document.querySelector('.right').style.cssText+="width:50%;margin-top:4.9125rem"
+		}
 	</script>
 </html>
